@@ -24,6 +24,10 @@
         link {
           color: #34A6E0;
         }
+        .ok {
+            width: fit-content;
+            display: inline-block
+        }
     </style>
     <h1 id="mypage">Welcome to my page!!</h1>
     <div>I am a 13 year old furry who does random stuff :3</div>
@@ -38,7 +42,7 @@
         				result += ` `
         				break;
         			default:
-        				result += `<span style="transform: translateY(${Math.sin((i*incrmente+time)*Math.PI)*10}px)">${text[i]}</span>`
+        				result += `<div style="transform: translateY(${Math.sin((i*incrmente+time)*Math.PI)*10}px)" class="ok">${text[i]}</div>`
         		}
         	};
         	return result
