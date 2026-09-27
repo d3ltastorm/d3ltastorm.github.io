@@ -14,11 +14,15 @@
           color: white;
           font: Segoe UI;
         }
+        h1 {
+            text-shadow: 0 5px 1px #fff9, 0 10px 2px #fff5
+        }
         link {
           color: #34A6E0;
         }
     </style>
     <h1 id="mypage">Welcome to my page!!</h1>
+    <div>I am a 13 year old furry who does random stuff :3</div>
     <h2>Websites: </h2>
     <a href="https://d3ltastorm.github.io/power-calc">Abbreviation Calculator</a>
     <script>
@@ -36,7 +40,7 @@
         	return result
         };
         setInterval(_=>{
-            document.getElementById("mypage").innerHTML = wabver(text,incrmente,performance.now())
+            document.getElementById("mypage").innerHTML = wabver("Welcome to my page!!",0.025,performance.now())
         },33)
     </script>
 </body>
