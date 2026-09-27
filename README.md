@@ -1,1 +1,1 @@
-# Don't be a dickhead.
+# don't think about forking my repository
