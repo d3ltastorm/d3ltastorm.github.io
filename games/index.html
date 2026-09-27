@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>WELCOME TO DELTASTORM'S PAGE</title>
+    <meta name="description" content="you can visit my websites!"/>
+    <meta name="og:title" content="WELCOME TO DELTASTORM'S PAGE"/>
+    <meta name="og:description" content="you can visit my websites!"/>
+</head>
+<body>
+    <style>
+        html {
+          background-color: black;
+          color: white;
+          font-family: pointfree bold;
+        }
+        @font-face {
+            font-family: pointfree bold;
+            src: url(/fonts/pointfree-bold.ttf)
+        }
+        h1 {
+            text-shadow: 0 4px 1px #f888, 0 8px 2px #f004;
+            animation: rainbow-shadows 5s linear infinite;
+        }
+        @keyframes rainbow-shadows {
+            0%, 100% {
+                text-shadow: 0 4px 1px #f888, 0 8px 2px #f004;
+            }
+            16% {
+                text-shadow: 0 4px 1px #ff88, 0 8px 2px #ff04;
+            }
+            33% {
+                text-shadow: 0 4px 1px #8f88, 0 8px 2px #0f04;
+            }
+            50% {
+                text-shadow: 0 4px 1px #8ff8, 0 8px 2px #0ff4;
+            }
+            66% {
+                text-shadow: 0 4px 1px #88f8, 0 8px 2px #00f4;
+            }
+            83% {
+                text-shadow: 0 4px 1px #f8f8, 0 8px 2px #f0f4;
+            }
+        }
+        a {
+          color: #fff;
+          background-color: #fff6;
+          border-radius: 4px;
+          padding: 5px;
+          animation: custom-link 5s linear infinite
+        }
+@keyframes custom-link {
+            0%, 100% {
+                text-shadow: 0 2px 1px #fff8, 0 4px 1px #8886;
+                background-color: #88f6;
+            }
+            50% {
+                text-shadow: 0 2px 1px #88fb, 0 4px 1px #00f8;
+                background-color: #00f6;
+            }
+        }
+        .ok {
+            width: fit-content;
+            display: inline-block
+        }
+    </style>
+    <a href="https://d3ltastorm.github.io/">Return</a>
+    <h1 id="mypage">Games</h1>
+    <div>My Incremental Games</div>
+    <div><a href="https://d3ltastorm.github.io/The-Modding-Table">Resets and Ranks Table</a> - This game is about resets and ranks, obviously. What did you expect?</div>
+    <script>
+        function wabver(text,incrmente,time) {
+        	let result = "";
+        	for (let i in text) {
+        		switch (text[i]) {
+        			case " ":
+        				result += ` `
+        				break;
+        			default:
+        				result += `<div style="transform: translateY(${Math.sin((i*incrmente+time)*Math.PI)*6}px)" class="ok">${text[i]}</div>`
+        		}
+        	};
+        	return result
+        };
+        setInterval(_=>{
+            document.getElementById("mypage").innerHTML = wabver("Games",0.1,performance.now()/2000)
+        },33)
+    </script>
+</body>
+</html>
