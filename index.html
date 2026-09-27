@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
-    <title>richardgrechko websites.</title>
-    <meta name="description" content="those are the websites."/>
-    <meta name="og:title" content="richardgrechko websites."/>
-    <meta name="og:description" content="those are the websites."/>
+    <title>WELCOME TO DELTASTORM'S PAGE</title>
+    <meta name="description" content="you can visit my websites!"/>
+    <meta name="og:title" content="WELCOME TO DELTASTORM'S PAGE"/>
+    <meta name="og:description" content="you can visit my websites!"/>
 </head>
 <body>
     <style>
@@ -18,8 +18,26 @@
           color: #34A6E0;
         }
     </style>
-    <h1>richardgrechko websites.</h1>
+    <h1 id="mypage">Welcome to my page!!</h1>
     <h2>Websites: </h2>
-    <a href="https://richardgrechko.github.io/power-calc">Abbreviation Calculator</a>
+    <a href="https://d3ltastorm.github.io/power-calc">Abbreviation Calculator</a>
+    <script>
+        function wabver(text,incrmente,time) {
+        	let result = "";
+        	for (let i in text) {
+        		switch (text[i]) {
+        			case " ":
+        				result += ` `
+        				break;
+        			default:
+        				result += `<span style="transform: translateY(${Math.sin((i*incrmente+time)*Math.PI)*10}px)">${text[i]}</span>`
+        		}
+        	};
+        	return result
+        };
+        setInterval(_=>{
+            document.getElementById("mypage").innerHTML = wabver(text,incrmente,performance.now())
+        },33)
+    </script>
 </body>
 </html>
