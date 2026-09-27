@@ -2,44 +2,79 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
-    <title>richardgrechko websites.</title>
-    <meta name="description" content="those are the websites."/>
-    <meta name="og:title" content="richardgrechko websites."/>
-    <meta name="og:description" content="those are the websites."/>
+    <title>Error 404</title>
+    <meta name="description" content="This page doesn't exist!"/>
+    <meta name="og:title" content="Error 404"/>
+    <meta name="og:description" content="This page doesn't exist!"/>
 </head>
 <body>
     <style>
         html {
           background-color: black;
           color: white;
-          font: Segoe UI;
-			text-align: center;
+          font-family: pointfree bold;
+        }
+        @font-face {
+            font-family: pointfree bold;
+            src: url(/fonts/pointfree-bold.ttf)
         }
         h1 {
-    		animation: error 0.4s linear infinite;
+            text-shadow: 0 4px 1px #f888, 0 8px 2px #f004;
+            animation: red-tick 1s linear infinite;
         }
-    		@keyframes error {
-    		    0% {
-    		        color: hsl(0, 100%, 50%)
-    		    }
-    		
-    		
-    		    50% {
-    		        color: hsl(0, 50%, 50%)
-    		    }
-    		
-    		
-    		    100% {
-    		        color: hsl(0, 100%, 50%)
-    		    }
-    		
-    		}
-        link {
-          color: #34A6E0;
+        @keyframes red-tick {
+            0%, 100% {
+                color: #f88;
+                text-shadow: 0 4px 1px #f888, 0 8px 2px #f004;
+            }
+            50% {
+                color: #f00;
+                text-shadow: 0 4px 1px #f008, 0 8px 2px #8004;
+            }
+        }
+        a {
+          color: #fff;
+          background-color: #fff6;
+          border-radius: 4px;
+          padding: 5px;
+          animation: custom-link 5s linear infinite
+        }
+@keyframes custom-link {
+            0%, 100% {
+                text-shadow: 0 2px 1px #fff8, 0 4px 1px #8886;
+                background-color: #88f6;
+            }
+            50% {
+                text-shadow: 0 2px 1px #88fb, 0 4px 1px #00f8;
+                background-color: #00f6;
+            }
+        }
+        .ok {
+            width: fit-content;
+            display: inline-block
         }
     </style>
-    <h1>404</h1>
-    <h2>This page doesn't exist; There's nothing here</h2>
-    <a href="https://richardgrechko.github.io/">Back</a>
+    <h1 id="mypage">Error 404: Sorry, but the website you were trying to enter does not exist!</h1>
+    <h2 id="reason">Perhaps you spelled it wrong?</h2>
+    <a href="https://d3ltastorm.github.io/">Return</a>
+    <script>
+        function wabver(text,incrmente,time) {
+        	let result = "";
+        	for (let i in text) {
+        		switch (text[i]) {
+        			case " ":
+        				result += ` `
+        				break;
+        			default:
+        				result += `<div style="transform: translateY(${Math.sin((i*incrmente+time)*Math.PI)*6}px)" class="ok">${text[i]}</div>`
+        		}
+        	};
+        	return result
+        };
+        setInterval(_=>{
+            document.getElementById("mypage").innerHTML = wabver("Error 404: Sorry, but the website you were trying to enter does not exist!",0.1,performance.now()/2000)
+            document.getElementById("reason").innerHTML = wabver("Perhaps you spelled it wrong?",0.05,performance.now()/1000)
+        },33)
+    </script>
 </body>
 </html>
