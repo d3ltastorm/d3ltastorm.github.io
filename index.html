@@ -19,7 +19,28 @@
             src: url(/fonts/pointfree-bold.ttf)
         }
         h1 {
-            text-shadow: 0 4px 1px #fff9, 0 8px 2px #fff5
+            text-shadow: 0 4px 1px #f888, 0 8px 2px #f004;
+            animation: rainbow-shadows 5s linear infinite;
+        }
+        @keyframes rainbow-shadows {
+            0%, 100% {
+                text-shadow: 0 4px 1px #f888, 0 8px 2px #f004;
+            }
+            16% {
+                text-shadow: 0 4px 1px #ff88, 0 8px 2px #ff04;
+            }
+            33% {
+                text-shadow: 0 4px 1px #8f88, 0 8px 2px #0f04;
+            }
+            50% {
+                text-shadow: 0 4px 1px #8ff8, 0 8px 2px #0ff4;
+            }
+            66% {
+                text-shadow: 0 4px 1px #88f8, 0 8px 2px #00f4;
+            }
+            83% {
+                text-shadow: 0 4px 1px #f8f8, 0 8px 2px #f0f4;
+            }
         }
         link {
           color: #34A6E0;
@@ -42,13 +63,13 @@
         				result += ` `
         				break;
         			default:
-        				result += `<div style="transform: translateY(${Math.sin((i*incrmente+time)*Math.PI)*10}px)" class="ok">${text[i]}</div>`
+        				result += `<div style="transform: translateY(${Math.sin((i*incrmente+time)*Math.PI)*6}px)" class="ok">${text[i]}</div>`
         		}
         	};
         	return result
         };
         setInterval(_=>{
-            document.getElementById("mypage").innerHTML = wabver("Welcome to my page!!",0.05,performance.now()/3000)
+            document.getElementById("mypage").innerHTML = wabver("Welcome to my page!!",0.1,performance.now()/2000)
         },33)
     </script>
 </body>
