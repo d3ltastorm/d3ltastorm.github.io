@@ -42,18 +42,33 @@
                 text-shadow: 0 4px 1px #f8f8, 0 8px 2px #f0f4;
             }
         }
-        link {
-          color: #34A6E0;
+        a {
+          color: #fff;
+          background-color: #fff6;
+          border-radius: 4px;
+          padding: 5px;
+          animation: custom-link 5s linear infinite
+        }
+@keyframes custom-link {
+            0%, 100% {
+                text-shadow: 0 2px 1px #fff8, 0 4px 1px #8886;
+                background-color: #88f6;
+            }
+            50% {
+                text-shadow: 0 2px 1px #88fb, 0 4px 1px #00f8;
+                background-color: #00f6;
+            }
         }
         .ok {
             width: fit-content;
             display: inline-block
         }
     </style>
+    <a href="https://d3ltastorm.github.io/games">Games</a>
+    <a href="https://d3ltastorm.github.io/utils">Utilities</a>
     <h1 id="mypage">Welcome to my page!!</h1>
     <div>I am a 13 year old furry who does random stuff :3</div>
-    <h2>Websites: </h2>
-    <a href="https://d3ltastorm.github.io/power-calc">Abbreviation Calculator</a>
+    <div>My pronouns are he/they</div>
     <script>
         function wabver(text,incrmente,time) {
         	let result = "";
