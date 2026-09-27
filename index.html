@@ -12,10 +12,14 @@
         html {
           background-color: black;
           color: white;
-          font: Segoe UI;
+          font-family: pointfree bold;
+        }
+        @font-face {
+            font-family: pointfree bold;
+            src: url(/fonts/pointfree-bold.ttf)
         }
         h1 {
-            text-shadow: 0 5px 1px #fff9, 0 10px 2px #fff5
+            text-shadow: 0 4px 1px #fff9, 0 8px 2px #fff5
         }
         link {
           color: #34A6E0;
@@ -40,7 +44,7 @@
         	return result
         };
         setInterval(_=>{
-            document.getElementById("mypage").innerHTML = wabver("Welcome to my page!!",0.025,performance.now())
+            document.getElementById("mypage").innerHTML = wabver("Welcome to my page!!",0.05,performance.now()/3000)
         },33)
     </script>
 </body>
