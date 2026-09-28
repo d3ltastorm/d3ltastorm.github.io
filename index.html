@@ -45,8 +45,8 @@
         a {
           color: #fff;
           background-color: #fff6;
-          border-radius: 4px;
-          padding: 5px;
+          border-radius: 12px;
+          text-decoration: none;
           animation: custom-link 5s linear infinite
         }
 @keyframes custom-link {
@@ -60,10 +60,7 @@
             }
         }
         a:hover {
-          color: #fff;
           background-color: #f2f6;
-          border-radius: 4px;
-          padding: 5px;
           animation: custom-link2 5s linear infinite
         }
 @keyframes custom-link2 {
@@ -86,10 +83,12 @@
         }
         @keyframes likes-shadows {
             0%, 100% {
+                color: #fff;
                 text-shadow: 0 4px 1px #fff8, 0 8px 2px #8f84;
             }
             50% {
-                text-shadow: 0 4px 1px #8f88, 0 8px 2px #f004;
+                color: #8f8;
+                text-shadow: 0 4px 1px #8f88, 0 8px 2px #0f04;
             }
         }
         #dislikes {
@@ -98,9 +97,11 @@
         }
         @keyframes dislikes-shadows {
             0%, 100% {
+                color: #fff;
                 text-shadow: 0 4px 1px #fff8, 0 8px 2px #f884;
             }
             50% {
+                color: #f88;
                 text-shadow: 0 4px 1px #f888, 0 8px 2px #f004;
             }
         }
@@ -136,7 +137,7 @@
 <h1 id=nl><script src="https://webneko.net/n20171213.js"></script><a 
 href="https://webneko.net">Neko</a></h1>
     <script>
-        function wabver(text,incrmente,time) {
+        function wabver(text,incrmente,time,pxmult=6) {
         	let result = "";
         	for (let i in text) {
         		switch (text[i]) {
@@ -144,17 +145,17 @@ href="https://webneko.net">Neko</a></h1>
         				result += ` `
         				break;
         			default:
-        				result += `<div style="transform: translateY(${Math.sin((i*incrmente+time)*Math.PI)*6}px)" class="ok">${text[i]}</div>`
+        				result += `<div style="transform: translateY(${Math.sin((i*incrmente+time)*Math.PI)*pxmult}px)" class="ok">${text[i]}</div>`
         		}
         	};
         	return result
         };
         setInterval(_=>{
             document.getElementById("mypage").innerHTML = wabver("Welcome to my page!!",0.1,performance.now()/2000)
-            document.getElementById("hobby").innerHTML = wabver("programmer",0.2,performance.now()/1000)
-            document.getElementById("likes").innerHTML = wabver("i like",0.2,performance.now()/1000)
-            document.getElementById("meow").innerHTML = wabver("silly goobers",0.2,performance.now()/1000)
-            document.getElementById("dislikes").innerHTML = wabver("i dislike",0.2,performance.now()/1000)
+            document.getElementById("hobby").innerHTML = wabver("programmer",0.2,performance.now()/1000, 3)
+            document.getElementById("likes").innerHTML = wabver("i like",0.2,performance.now()/1000, 3)
+            document.getElementById("meow").innerHTML = wabver("silly goobers",0.2,performance.now()/1000, 3)
+            document.getElementById("dislikes").innerHTML = wabver("i dislike",0.2,performance.now()/1000, 3)
         },33)
     </script>
 </body>
