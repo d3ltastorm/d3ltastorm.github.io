@@ -59,9 +59,50 @@
                 background-color: #00f6;
             }
         }
+        a:hover {
+          color: #fff;
+          background-color: #f2f6;
+          border-radius: 4px;
+          padding: 5px;
+          animation: custom-link2 5s linear infinite
+        }
+@keyframes custom-link2 {
+            0%, 100% {
+                text-shadow: 0 2px 1px #f2fb, 0 4px 1px #d0d8;
+                background-color: #82f6;
+            }
+            50% {
+                text-shadow: 0 2px 1px #fffb, 0 4px 1px #fff8;
+                background-color: #f8f6;
+            }
+        }
         .ok {
             width: fit-content;
             display: inline-block
+        }
+        #likes {
+            text-shadow: 0 4px 1px #fff8, 0 8px 2px #8f84;
+            animation: likes-shadows 5s linear infinite;
+        }
+        @keyframes likes-shadows {
+            0%, 100% {
+                text-shadow: 0 4px 1px #fff8, 0 8px 2px #8f84;
+            }
+            50% {
+                text-shadow: 0 4px 1px #8f88, 0 8px 2px #f004;
+            }
+        }
+        #dislikes {
+            text-shadow: 0 4px 1px #fff8, 0 8px 2px #f884;
+            animation: dislikes-shadows 5s linear infinite;
+        }
+        @keyframes dislikes-shadows {
+            0%, 100% {
+                text-shadow: 0 4px 1px #fff8, 0 8px 2px #f884;
+            }
+            50% {
+                text-shadow: 0 4px 1px #f888, 0 8px 2px #f004;
+            }
         }
     </style>
     <a href="https://d3ltastorm.github.io/games">Games</a>
@@ -69,6 +110,31 @@
     <h1 id="mypage">Welcome to my page!!</h1>
     <div>I am a 13 year old furry who does random stuff :3</div>
     <div>My pronouns are he/they</div>
+    <div>i am a <span id="hobby">programmer</span> and i made this stuff</div>
+    <h2 id="likes">i like</h2>
+    <ul>
+        <li>
+            <span id="meow">silly goobers</span> :3
+        </li>
+        <li>
+            roblox obbies
+        </li>
+        <li>
+            killstreak swords
+        </li>
+    </ul>
+    <h2 id="dislikes">i dislike</h2>
+    <ul>
+        <li>
+            Microsoft
+        </li>
+        <li>
+            roblox platform
+        </li>
+    </ul>
+    <script>NekoType="white"</script>
+<h1 id=nl><script src="https://webneko.net/n20171213.js"></script><a 
+href="https://webneko.net">Neko</a></h1>
     <script>
         function wabver(text,incrmente,time) {
         	let result = "";
@@ -85,6 +151,10 @@
         };
         setInterval(_=>{
             document.getElementById("mypage").innerHTML = wabver("Welcome to my page!!",0.1,performance.now()/2000)
+            document.getElementById("hobby").innerHTML = wabver("programmer",0.2,performance.now()/1000)
+            document.getElementById("likes").innerHTML = wabver("i like",0.2,performance.now()/1000)
+            document.getElementById("meow").innerHTML = wabver("silly goobers",0.2,performance.now()/1000)
+            document.getElementById("dislikes").innerHTML = wabver("i dislike",0.2,performance.now()/1000)
         },33)
     </script>
 </body>
